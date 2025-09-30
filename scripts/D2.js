@@ -61,9 +61,10 @@ if (totalShoppingCart > 50) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const totalShoppingCart = 200
+const totalShoppingCart = 50
 const sconto = (totalShoppingCart * 20) / 100
 const prezzoFinale = totalShoppingCart - sconto
+const speseDiSpedizione = 10
 
 if (totalShoppingCart - sconto > 50) {
     console.log("Congratulazioni! Hai diritto alla spedizione gratuita!")
@@ -72,7 +73,12 @@ if (totalShoppingCart - sconto > 50) {
     console.log("Ordine minimo non raggiunto. Spese di spedizione: +10€")
     console.log("Black Friday! Sconto del 20% applicato!")
 }
-console.log("PREZZO FINALE", prezzoFinale)
+if (prezzoFinale < 50) {
+    console.log("PREZZO FINALE", prezzoFinale + speseDiSpedizione)
+} else {
+    console.log("Ordine minimo raggiunto! Spedizione gratuita")
+}
+
 
 
 
